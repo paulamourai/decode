@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500');
+
+:root {
+    --cor-primaria: #FFFFFF;
+    --cor-secundaria: #38040E;
+    --cor-terciaria: #640D14;
+    --cor-quaternaria: #F2F4FA;
+    --cor-unitaria: #000000;
+
+    --font-principal: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* height: 100vh; */
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+}
+
+.cabecalho {
+    /* padding: 50px 80px 90px;  */
+    padding: 30px 80px 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cabecalho_logo {
+    width: 183px;
+    height: 80px;
+}
+
+.cabecalho_menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    transform: translate(740%);
+}
+
+.cabecalho_menu_link {
+    display: flex;
+    justify-content: flex-end;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.decodificador {
+    padding: 0px 80px;
+    height: 556px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.decodificador_entrada {
+    width: 849px;
+    display: flex;
+    flex-direction: column;
+}
+
+.decodificador_entrada_titulos {
+    color: var(--cor-unitaria);
+    font-family: var(--font-principal);
+}
+
+.decodificador_entrada_paragrafo {
+    font-size: 38px;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+
+.decodificador_entrada_aviso {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.decodificador_cxtextos {
+    display: flex;
+    flex-direction: row;
+    padding-top: 56px;
+    justify-content: space-between;
+}
+
+.decodificador_cxtextos_entrada,
+.decodificador_cxtextos_saida {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+    gap: 23px;
+    align-items: center;
+}
+
+#inputTexto {
+    width: 350px;
+    height: 310px;
+    border-radius: 15px;
+    background: var(--cor-quaternaria);
+    border: none;
+    border-style: none;
+    /* gap: 23px; */
+    outline: none;
+    color: var(--cor-terciaria);
+    font-family: var(--font-principal);
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 22px;
+    padding-top: 31px;
+    resize: none;
+}
+
+#inputTexto::placeholder {
+    width: 294px;
+    height: 25px;
+    color: var(--cor-terciaria);
+    font-family: var(--font-principal);
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 3px;
+    padding-top: 0px;
+}
+
+.btn-criptografar {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 20px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    color: var(--cor-secundaria);
+    font-family: var(--font-principal);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 15px;
+    text-decoration: none;
+    cursor: pointer;
+  
+}
+
+.btn-criptografar:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
+
+#outputTexto {
+    width: 350px;
+    height: 310px;
+    border-radius: 15px;
+    background: var(--cor-quaternaria);
+    border: none;
+    border-style: none;
+    /* gap: 23px; */
+    outline: none;
+    color: var(--cor-terciaria);
+    font-family: var(--font-principal);
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 22px;
+    padding-top: 31px;
+    resize: none;
+}
+
+.btn-descriptografar {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 20px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    color: var(--cor-secundaria);
+    font-family: var(--font-principal);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-descriptografar:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
+
+.btn-copiar {
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    color: var(--cor-secundaria);
+    border: none;
+    display: flex;
+    cursor: pointer;
+}
+
+.btn_copiar_icone {
+    padding-top: 24px;
+    transform: translate(-285%);
+    opacity: 80%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--cor-quaternaria);
+    margin: 15% auto;
+    padding: 8px;
+    border: 10px solid var(--cor-quaternaria);
+    width: 10%;
+    border-radius: 10px;
+}
+
+#modalText {
+    display: flex;
+    justify-content: center;
+    color: var(--cor-secundaria);
+    font-family: var(--font-principal);
+    font-size: 14px;
+    font-weight: 400;
+    align-items: center;
+}
+
+.decodificador_imagem {
+    display: flex;
+    width: 315px;
+    height: 499px;
+    padding-left: 12px;
+}
+
+.rodape {
+    padding-top: 90px;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.rodape_txt {
+    width: 300px;
+    height: 23px;
+    color: var(--cor-secundaria);
+    font-family: var(--font-principal);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/*Responsividade*/
+@media only screen and (max-width: 768px) {
+    .cabecalho {
+        padding: 20px 40px;
+    }
+
+    .cabecalho_menu {
+        transform: translate(250%);
+    }
+
+    .decodificador {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        height: auto;
+    }
+
+    .decodificador_entrada {
+        width: 100%;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .decodificador_entrada_paragrafo {
+        font-size: 24px;
+    }
+
+    #inputTexto,
+    #outputTexto {
+        width: 100%;
+        height: 200px;
+        font-size: 12px;
+    }
+
+    .decodificador_imagem {
+        width: 80%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .rodape {
+        padding-top: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .decodificador_entrada_paragrafo {
+        font-size: 18px;
+    }
+
+    .btn-criptografar,
+    .btn-descriptografar {
+        width: 100px;
+        font-size: 10px;
+    }
+
+    .decodificador_imagem {
+        width: 90%;
+    }
+
+    .rodape_txt {
+        font-size: 12px;
+    }
+}

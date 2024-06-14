@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <title> Decodificador de Texto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho">      
+        <img class="cabecalho_logo" src="./assets/Logo Alura.png" alt="Logo Alura">  
+        
+    </header>
+    <main class="decodificador">
+        <section class="decodificador_entrada">
+            <div class="decodificador_entrada_titulos"> <!--Paragráfos iniciais-->
+                <p class="decodificador_entrada_paragrafo">Escreva o seu texto abaixo:</p>
+                <p class="decodificador_entrada_aviso"><strong>Atenção: </strong>apenas letras minúsculas e sem acento.</p>
+            </div>            
+            <div class="decodificador_cxtextos"> <!--Campos de textos-->
+                <div class="decodificador_cxtextos_entrada"> <!--Caixa de Criptografia-->
+                    <textarea name="texto-entrada" id="inputTexto" cols="15" rows="10" wrap="hard" minlength="10" maxlength="200" placeholder="Nenhuma mensagem encontrada" required></textarea>
+
+                    <button onclick="criptografar()" id="btn-criptografar" type="submit" class="btn-criptografar">Criptografar</button> 
+                </div>
+
+                <div class="decodificador_cxtextos_saida"><!--Caixa de Descriptografia-->
+                    <textarea name="texto-saida" id="outputTexto" cols="15" rows="10" wrap="hard" minlength="10" maxlength="200" required></textarea>
+
+                    <button onclick="descriptografar()" id="btn-descriptografar" type="submit" class="btn-descriptografar">Descriptografar</button> 
+                </div>    
+                <button onclick="copiar()" id="btn-copiar" class="btn-copiar"><!--Botão de Copiar-->
+                    
+                </button> 
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                      <!-- <span class="close">&times;</span> -->
+                      <p id="modalText">Copiado</p>
+                    </div>
+                </div>                           
+            </div>              
+        </section>
+        <img class="decodificador_imagem" src="./assets/Menino.png" alt="Menino">
+    </main>
+    <footer class="rodape">
+        <p class="rodape_txt">Desenvolvido por Paula Moura</p>
+    </footer>    
+
+    <script src="script.js"></script>
+</body>
+</html>
